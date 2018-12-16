@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_activity_edit">EditActivity</string>
+</resources>
