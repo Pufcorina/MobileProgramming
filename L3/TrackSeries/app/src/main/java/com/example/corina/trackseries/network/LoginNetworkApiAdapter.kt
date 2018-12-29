@@ -25,7 +25,7 @@ class LoginNetworkApiAdapter private constructor() {
 
     companion object {
         val instance: LoginNetworkApiAdapter by lazy { Holder.INSTANCE }
-        const val BASE_URL: String = "http://192.168.43.105:3000"
+        const val BASE_URL: String = "http://192.168.0.12:3000"
     }
 
     private val loginService: LoginService
@@ -60,6 +60,10 @@ class LoginNetworkApiAdapter private constructor() {
         return loginService.register(username, email, password).execute().body()!!
     }
 
+    fun forgotPassword(email: String) : String {
+        return loginService.forgotPassword(email).execute().body()!!
+    }
+
     interface LoginService {
         @GET("/login")
         fun login(@Query("username") username: String, @Query("password") password: String): Call<JsonElement>
@@ -70,5 +74,8 @@ class LoginNetworkApiAdapter private constructor() {
         fun register(@Field("username") username: String,
                      @Field("email") email: String,
                      @Field("password") password: String): Call<Boolean>
+
+        @GET("/forgotPassword/")
+        fun forgotPassword(@Query("email") email: String) : Call<String>
     }
 }
