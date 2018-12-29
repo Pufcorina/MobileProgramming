@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
+import com.example.corina.trackseries.admin.AdminActivity
 import com.example.corina.trackseries.local_persistence.account.AccountDataSource
 import com.example.corina.trackseries.local_persistence.account.AccountDatabase
 import com.example.corina.trackseries.local_persistence.account.AccountRepository
+import com.example.corina.trackseries.login.LoginActivity
 import com.example.corina.trackseries.model.Account
-import com.example.corina.trackseries.model.AccountInfo
-import io.reactivex.Observable
-import io.reactivex.ObservableOnSubscribe
+import com.example.corina.trackseries.user.UserActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers

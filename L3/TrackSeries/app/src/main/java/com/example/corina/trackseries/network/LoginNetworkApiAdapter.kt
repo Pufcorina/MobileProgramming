@@ -64,6 +64,10 @@ class LoginNetworkApiAdapter private constructor() {
         return loginService.forgotPassword(email).execute().body()!!
     }
 
+    fun logout(email: String) : Int {
+        return loginService.logout(email).execute().body()!!
+    }
+
     interface LoginService {
         @GET("/login")
         fun login(@Query("username") username: String, @Query("password") password: String): Call<JsonElement>
@@ -75,7 +79,10 @@ class LoginNetworkApiAdapter private constructor() {
                      @Field("email") email: String,
                      @Field("password") password: String): Call<Boolean>
 
-        @GET("/forgotPassword/")
+        @GET("/forgotPassword")
         fun forgotPassword(@Query("email") email: String) : Call<String>
+
+        @GET("/logout")
+        fun logout(@Query("email") email: String) : Call<Int>
     }
 }

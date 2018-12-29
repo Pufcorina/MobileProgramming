@@ -1,6 +1,8 @@
 package com.example.corina.trackseries.email
 
+import android.support.v7.app.AlertDialog
 import android.util.Log
+import com.example.corina.trackseries.R
 
 class EmailSender {
     companion object {

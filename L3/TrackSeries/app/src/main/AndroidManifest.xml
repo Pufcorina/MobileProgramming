@@ -20,20 +20,32 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AdminActivity">
-        </activity>
-        <activity android:name=".UserActivity">
+        <activity
+                android:name=".admin.AdminActivity"
+                android:label="@string/title_activity_admin"
+                android:theme="@style/AppTheme">
         </activity>
         <activity
-                android:name=".LoginActivity"
+                android:name=".user.UserActivity"
+                android:label="@string/title_activity_user"
+                android:theme="@style/AppTheme">
+        </activity>
+        <activity
+                android:name=".login.LoginActivity"
                 android:theme="@style/LoginPage">
         </activity>
         <activity
-                android:name=".RegisterActivity"
+                android:name=".login.RegisterActivity"
                 android:theme="@style/LoginPage">
         </activity>
-        <activity android:name=".ForgotPasswordActivity"
-                  android:theme="@style/LoginPage">
+        <activity
+                android:name=".login.ForgotPasswordActivity"
+                android:theme="@style/LoginPage">
+        </activity>
+        <activity
+                android:name=".NavDrawerActivity"
+                android:label="@string/title_activity_nav_drawer"
+                android:theme="@style/AppTheme">
         </activity>
     </application>
 

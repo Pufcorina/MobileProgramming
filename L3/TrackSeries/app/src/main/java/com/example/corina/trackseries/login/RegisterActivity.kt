@@ -1,8 +1,11 @@
-package com.example.corina.trackseries
+package com.example.corina.trackseries.login
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Toast
+import com.example.corina.trackseries.R
 import com.example.corina.trackseries.network.LoginNetworkApiAdapter
 import kotlinx.android.synthetic.main.activity_register.*
 import org.jetbrains.anko.doAsync
@@ -24,7 +27,10 @@ class RegisterActivity : AppCompatActivity() {
             if (usernameText != "" && passwordText != "" && passwordSecondText != "" && emailText != "")
             {
                 if (passwordText == passwordSecondText)
-                    registerUser(usernameText, passwordText, emailText)
+                    if (isEmail(emailText))
+                        registerUser(usernameText, passwordText, emailText)
+                    else
+                        Toast.makeText(baseContext, "Invalid email", Toast.LENGTH_LONG).show()
                 else
                     Toast.makeText(baseContext, "Passwords should match", Toast.LENGTH_LONG).show()
             }
@@ -51,5 +57,13 @@ class RegisterActivity : AppCompatActivity() {
                 }
         }
 
+    }
+
+    fun isEmail(email: String) : Boolean {
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches())
+    }
+
+    override fun onBackPressed() {
+        finish()
     }
 }

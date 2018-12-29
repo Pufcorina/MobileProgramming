@@ -1,7 +1,10 @@
-package com.example.corina.trackseries
+package com.example.corina.trackseries.login
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
+import com.example.corina.trackseries.R
 import com.example.corina.trackseries.network.LoginNetworkApiAdapter
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 import org.jetbrains.anko.doAsync
@@ -31,11 +34,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
                         uiThread { toast("Inexistent email") }
                     else
                     {
-                        uiThread { toast(result) }
-
                         val message = "Your password for this account is: $result"
-
-                        EmailSender.instance.sendMessage("Track Series password", message, "trackseries.cwori@gmail.com", emailText)
+                        if (isEmail(emailText))
+                            EmailSender.instance.sendMessage("Track Series password", message, "trackseries.cwori@gmail.com", emailText)
+                        else
+                            uiThread { toast("Invalid email") }
                         finish()
 
                     }
@@ -46,5 +49,12 @@ class ForgotPasswordActivity : AppCompatActivity() {
         }
     }
 
+    fun isEmail(email: String) : Boolean {
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches())
+    }
+
+    override fun onBackPressed() {
+        finish()
+    }
 
 }

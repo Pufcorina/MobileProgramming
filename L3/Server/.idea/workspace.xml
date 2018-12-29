@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fad30eb-ba30-4d63-894e-8ca120c09d48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/email.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/forgotPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/forgotPassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TrackSeries/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/ForgotPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/ForgotPasswordActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/network/LoginNetworkApiAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/network/LoginNetworkApiAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/res/layout/activity_forgot_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/res/layout/activity_forgot_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/RegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/RegisterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/email/EmailSender.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/java/com/example/corina/trackseries/email/EmailSender.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TrackSeries/app/src/main/res/layout/activity_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TrackSeries/app/src/main/res/layout/activity_user.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,18 +68,20 @@
     <session id="1030340498">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="211" />
+          <entry key="js" value="263" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="211" />
+          <entry key="JavaScript" value="263" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -108,7 +107,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/forgotPassword.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -125,8 +124,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="3" selection-end-line="33" />
+            <state relative-caret-position="85">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -140,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/logout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="153">
+              <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -200,7 +199,6 @@
         <option value="$PROJECT_DIR$/mysql.js" />
         <option value="$PROJECT_DIR$/routes/account.js" />
         <option value="$PROJECT_DIR$/database.js" />
-        <option value="$PROJECT_DIR$/routes/logout.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/routes/admin.js" />
         <option value="$PROJECT_DIR$/routes/register.js" />
@@ -208,6 +206,7 @@
         <option value="$PROJECT_DIR$/routes/login.js" />
         <option value="$PROJECT_DIR$/routes/email.js" />
         <option value="$PROJECT_DIR$/routes/forgotPassword.js" />
+        <option value="$PROJECT_DIR$/routes/logout.js" />
       </list>
     </option>
   </component>
@@ -227,9 +226,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="662" />
-    <option name="width" value="1265" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="585" />
+    <option name="width" value="1300" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -239,7 +238,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,13 +254,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546081736480" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1546086212428" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.13.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
@@ -293,19 +292,20 @@
       <option name="presentableId" value="Default" />
       <updated>1545837052426</updated>
       <workItem from="1545837078474" duration="24245000" />
-      <workItem from="1546025218252" duration="4780000" />
+      <workItem from="1546025218252" duration="4852000" />
+      <workItem from="1546086260589" duration="2595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29025000" />
+    <option name="totallyTimeSpent" value="31692000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="662" y="0" width="1265" height="1047" extended-state="1" />
+    <frame x="585" y="0" width="1300" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20248963" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.2" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.50082374" side_tool="true" visible="true" weight="0.2" />
       <window_info id="Designer" order="2" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -315,7 +315,7 @@
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33296824" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33515882" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39868566" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -364,24 +364,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/login.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="3" selection-end-line="33" />
+        <state relative-caret-position="527">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="24" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/email.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/logout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -399,9 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -409,20 +402,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/email.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/forgotPassword.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/logout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="53" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
         </state>
       </provider>
     </entry>
