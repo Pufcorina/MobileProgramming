@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "492855070432",
+    "firebase_url": "https://track-series-1.firebaseio.com",
+    "project_id": "track-series-1",
+    "storage_bucket": "track-series-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492855070432:android:e827f72acd47ed8a",
+        "android_client_info": {
+          "package_name": "com.example.corina.trackseries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492855070432-42368e4lhpmc5700r5bsp5910b2on70q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFMOaULCjVB9aaJAclV1LMM6haytH9Q1U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

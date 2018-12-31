@@ -6,12 +6,16 @@ import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.example.corina.trackseries.R
+import com.example.corina.trackseries.adapters.ShowAdapter
+import com.example.corina.trackseries.network.AdminNetworkApiAdapter
 import com.example.corina.trackseries.network.LoginNetworkApiAdapter
 import kotlinx.android.synthetic.main.activity_admin.*
 import kotlinx.android.synthetic.main.app_bar_admin.*
+import kotlinx.android.synthetic.main.content_admin.*
 import kotlinx.android.synthetic.main.nav_header.*
 import org.jetbrains.anko.doAsync
 
@@ -20,15 +24,12 @@ class AdminActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
     private var adminId: String = ""
     private var adminEmail: String = ""
 
+    private lateinit var adapter: ShowAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar,
@@ -40,11 +41,13 @@ class AdminActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelect
 
         nav_view.setNavigationItemSelectedListener(this)
 
-
-
         adminUsername = intent.getStringExtra("username")
         adminId = intent.getStringExtra("accountId")
         adminEmail = intent.getStringExtra("email")
+
+        adapter = ShowAdapter(this)
+        show_list.layoutManager = LinearLayoutManager(this)
+        show_list.adapter = adapter
     }
 
     override fun onBackPressed() {
