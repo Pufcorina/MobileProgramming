@@ -1,71 +1,53 @@
 package com.example.corina.trackseries
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Intent
-import android.util.Log
-import android.widget.Toast
-import com.example.corina.trackseries.admin.AdminActivity
-import com.example.corina.trackseries.local_persistence.account.AccountDataSource
-import com.example.corina.trackseries.local_persistence.account.AccountDatabase
-import com.example.corina.trackseries.local_persistence.account.AccountRepository
-import com.example.corina.trackseries.login.LoginActivity
-import com.example.corina.trackseries.model.Account
-import com.example.corina.trackseries.user.UserActivity
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.schedulers.Schedulers
-
+import com.example.corina.trackseries.auth.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    private var accountRepository: AccountRepository?=null
-    private var compositeDisposable: CompositeDisposable?=null
-
-    private var account: Account?=null
+    private lateinit var auth: FirebaseAuth
+    private lateinit var authListener: FirebaseAuth.AuthStateListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        compositeDisposable = CompositeDisposable()
-        val accountDatabase = AccountDatabase.getInstance(this@MainActivity)
-        accountRepository = AccountRepository.getInstance(AccountDataSource.getInstance(accountDatabase.accountDAO()))
+        //get firebase auth instance
+        auth = FirebaseAuth.getInstance()
 
-        var disposable = accountRepository!!.all
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({accounts -> onGetAllSuccess(accounts)})
-            {
-                    throwable -> Toast.makeText(this@MainActivity, "" + throwable.message, Toast.LENGTH_SHORT)
-                .show()
+        val user = FirebaseAuth.getInstance().currentUser
+
+        authListener = FirebaseAuth.AuthStateListener {
+            val userAuth = FirebaseAuth.getInstance().currentUser
+            if (userAuth == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+                finish()
             }
-        compositeDisposable!!.add(disposable)
-
-        val activityIntent: Intent
-        // go straight to main if a token is stored
-        Log.d("account", account.toString())
-        if (account != null) {
-            accountRepository!!.insert(account as Account)
-
-
-            if (account!!.accountId == 1)
-                activityIntent = Intent(this, UserActivity::class.java)
-            else
-                activityIntent = Intent(this, AdminActivity::class.java)
-        } else {
-            activityIntent = Intent(this, LoginActivity::class.java)
         }
+        val activityIntent: Intent
+
+        if (user!!.email.equals("todorananacorina13@gmail.com"))
+            activityIntent = Intent(this@MainActivity, AdminActivity::class.java)
+        else
+            activityIntent = Intent(this@MainActivity, UserActivity::class.java)
+
         startActivity(activityIntent)
         finish()
     }
 
-    private fun onGetAllSuccess(accounts: List<Account>?) {
-        Log.d("accounts", accounts.toString())
-        if (accounts != null)
-            account = accounts[0]
+    public override fun onStart() {
+        super.onStart()
+        auth.addAuthStateListener(authListener)
     }
 
-    override fun onDestroy() {
-        compositeDisposable!!.clear()
-        super.onDestroy()
+
+    public override fun onStop() {
+        super.onStop()
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener)
+        }
     }
 }

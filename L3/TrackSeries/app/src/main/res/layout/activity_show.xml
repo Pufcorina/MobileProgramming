@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background"
+        tools:context=".show.ShowActivity">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:orientation="vertical"
+                  android:padding="16dp">
+
+        <ImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/iconita" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:id="@+id/title_show"
+                                                          android:hint="@string/show_title"
+                                                          android:textSize="21sp"
+                                                          android:inputType="text"
+                                                          android:textColorHint="@color/hint_color"
+                                                          app:met_baseColor="@color/white"
+                                                          app:met_floatingLabel="highlight"
+                                                          app:met_primaryColor="@color/colorAccent"
+                                                          app:met_singleLineEllipsis="true"/>
+        <com.rengwuxian.materialedittext.MaterialEditText android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:id="@+id/producer_show"
+                                                          android:hint="@string/producer"
+                                                          android:textSize="21sp"
+                                                          android:inputType="text"
+                                                          android:textColorHint="@color/hint_color"
+                                                          app:met_baseColor="@color/white"
+                                                          app:met_floatingLabel="highlight"
+                                                          app:met_primaryColor="@color/colorAccent"
+                                                          app:met_singleLineEllipsis="true"/>
+        <com.rengwuxian.materialedittext.MaterialEditText android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:id="@+id/description_show"
+                                                          android:hint="@string/description"
+                                                          android:textSize="21sp"
+                                                          android:inputType="textMultiLine"
+                                                          android:textColorHint="@color/hint_color"
+                                                          app:met_baseColor="@color/white"
+                                                          app:met_floatingLabel="highlight"
+                                                          app:met_primaryColor="@color/colorAccent"
+                                                          app:met_singleLineEllipsis="true"/>
+        <com.rengwuxian.materialedittext.MaterialEditText android:layout_width="match_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:id="@+id/rating_show"
+                                                          android:hint="@string/rating"
+                                                          android:textSize="21sp"
+                                                          android:inputType="number"
+                                                          android:textColorHint="@color/hint_color"
+                                                          app:met_baseColor="@color/white"
+                                                          app:met_floatingLabel="highlight"
+                                                          app:met_primaryColor="@color/colorAccent"
+                                                          app:met_singleLineEllipsis="true"/>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/add_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@android:drawable/ic_input_add"/>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/fab_margin"
+                app:srcCompat="@android:drawable/ic_menu_edit"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
