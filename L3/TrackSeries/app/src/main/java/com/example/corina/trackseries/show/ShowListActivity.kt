@@ -6,6 +6,7 @@ import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.example.corina.trackseries.R
@@ -21,6 +22,12 @@ class ShowListActivity : AppCompatActivity() {
 
     private var firestoreDB: FirebaseFirestore? = null
     private var firestoreListener: ListenerRegistration? = null
+
+    companion object {
+        var animationItem: Int = 0
+    }
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,6 +101,13 @@ class ShowListActivity : AppCompatActivity() {
             finish() // close this activity and return to preview activity (if there is any)
         }
 
+        animationItem = item.itemId
+
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.list_animations, menu)
+        return true
     }
 }

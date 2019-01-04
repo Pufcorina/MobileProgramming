@@ -34,11 +34,6 @@ class ShowActivity : AppCompatActivity() {
             rating_show.setText(bundle.getString("UpdateShowRating"))
         }
 
-        val title = title_show.text.toString()
-        val producer = producer_show.text.toString()
-        val description = description_show.text.toString()
-        val rating = rating_show.text.toString()
-
         edit_button.visibility = View.GONE
         add_button.visibility = View.GONE
 
@@ -52,15 +47,21 @@ class ShowActivity : AppCompatActivity() {
 
 
         add_button.setOnClickListener {
-            if (!checkFields(title, producer, description, rating))
-                return@setOnClickListener
+            val title = title_show.text.toString()
+            val producer = producer_show.text.toString()
+            val description = description_show.text.toString()
+            val rating = rating_show.text.toString()
+
             addShow(title, producer, description, rating)
             finish()
         }
 
         edit_button.setOnClickListener {
-            if (!checkFields(title, producer, description, rating))
-                return@setOnClickListener
+            val title = title_show.text.toString()
+            val producer = producer_show.text.toString()
+            val description = description_show.text.toString()
+            val rating = rating_show.text.toString()
+
             updateShow(id, title, producer, description, rating)
             finish()
         }
@@ -94,6 +95,8 @@ class ShowActivity : AppCompatActivity() {
         description: String,
         rating: String
     ) {
+
+
         val show = Show(id, title, producer, description, rating.toInt()).toMap()
 
         firestoreDB!!.collection("shows")
@@ -110,6 +113,7 @@ class ShowActivity : AppCompatActivity() {
     }
 
     private fun addShow(title: String, producer: String, description: String, rating: String) {
+
         val show = Show(title, producer, description, rating.toInt()).toMap()
 
         firestoreDB!!.collection("shows")

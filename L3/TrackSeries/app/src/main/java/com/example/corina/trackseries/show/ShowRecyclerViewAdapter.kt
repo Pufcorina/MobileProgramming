@@ -12,6 +12,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 import android.content.Intent
 import android.util.Log
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import com.example.corina.trackseries.R
 import com.example.corina.trackseries.R.id.parent
@@ -30,6 +32,30 @@ class ShowRecyclerViewAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShowViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.show_view, parent, false)
 
+        val animation: Animation
+
+        when (ShowListActivity.animationItem) {
+            R.id.fade -> {
+                animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+                view.startAnimation(animation)
+            }
+            R.id.slideleft -> {
+                animation = AnimationUtils.loadAnimation(context, R.anim.slide_left)
+                view.startAnimation(animation)
+            }
+            R.id.slideup -> {
+                animation = AnimationUtils.loadAnimation(context, R.anim.slide_up)
+                view.startAnimation(animation)
+            }
+            R.id.shake -> {
+                animation = AnimationUtils.loadAnimation(context, R.anim.shake)
+                view.startAnimation(animation)
+            }
+            R.id.scale -> {
+                animation = AnimationUtils.loadAnimation(context, R.anim.scale)
+                view.startAnimation(animation)
+            }
+        }
         return ShowViewHolder(view)
     }
 
