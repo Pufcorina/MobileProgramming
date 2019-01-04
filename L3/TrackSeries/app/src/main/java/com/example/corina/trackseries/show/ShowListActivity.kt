@@ -85,9 +85,6 @@ class ShowListActivity : AppCompatActivity() {
                     }
 
                     mAdapter = ShowAdapter(showsList, applicationContext, firestoreDB!!)
-                    val mLayoutManager = LinearLayoutManager(applicationContext)
-//                    show_list.layoutManager = mLayoutManager
-//                    show_list.itemAnimator = DefaultItemAnimator()
                     show_list.adapter = mAdapter
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.exception)

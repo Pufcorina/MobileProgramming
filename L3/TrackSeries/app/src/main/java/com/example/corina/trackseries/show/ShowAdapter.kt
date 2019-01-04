@@ -11,6 +11,8 @@ import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 
 import android.content.Intent
+import android.support.v4.content.ContextCompat.startActivity
+import android.support.v7.app.AlertDialog
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.BaseAdapter
@@ -49,6 +51,16 @@ class ShowAdapter(
 
         viewHolder.view.btnEdit.setOnClickListener { updateShow(show) }
         viewHolder.view.btnDelete.setOnClickListener { deleteShow(show.id!!, position) }
+        viewHolder.view.setOnClickListener {
+            val detailIntent = Intent(context, ShowDetailActivity::class.java)
+            detailIntent.putExtra("title", show.title)
+            detailIntent.putExtra("producer", show.producer)
+            detailIntent.putExtra("rating", show.rating.toString())
+            detailIntent.putExtra("description", show.description)
+            detailIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+
+            startActivity(context, detailIntent, null)
+        }
 
         val animation: Animation
 

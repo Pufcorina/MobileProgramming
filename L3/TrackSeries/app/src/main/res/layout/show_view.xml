@@ -31,6 +31,7 @@
                 android:text="Title"
                 android:singleLine="false"
                 android:layout_toLeftOf="@id/rating"
+                android:textColor="@color/white"
                 android:textSize="16dp" android:layout_alignParentStart="true" android:layout_centerVertical="true"
                 android:layout_marginStart="11dp" android:layout_alignParentLeft="true"
                 android:layout_marginLeft="11dp"/>
@@ -42,6 +43,7 @@
                 android:layout_marginRight="25dp"
                 android:layout_toLeftOf="@id/btnEdit"
                 android:text="Rating: 0"
+                android:textColor="@color/white"
                 android:padding="5dp" android:layout_centerVertical="true"/>
 
         <TextView
