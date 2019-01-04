@@ -17,7 +17,6 @@ import com.example.corina.trackseries.auth.LoginActivity
 import com.example.corina.trackseries.model.Show
 import com.example.corina.trackseries.show.ShowActivity
 import com.example.corina.trackseries.show.ShowListActivity
-import com.example.corina.trackseries.show.ShowRecyclerViewAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration

@@ -11,69 +11,90 @@ import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 
 import android.content.Intent
-import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.BaseAdapter
 import android.widget.Toast
 import com.example.corina.trackseries.R
-import com.example.corina.trackseries.R.id.parent
 import com.example.corina.trackseries.model.Show
 import kotlinx.android.synthetic.main.show_view.view.*
 
-class ShowRecyclerViewAdapter(
+class ShowAdapter(
     private val showsList: MutableList<Show>,
     private val context: Context,
     private val firestoreDB: FirebaseFirestore)
 
-    : RecyclerView.Adapter<ShowRecyclerViewAdapter.ShowViewHolder>() {
+    : BaseAdapter() {
 
-    class ShowViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShowViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.show_view, parent, false)
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        var view: View?
+        var viewHolder: ShowViewHolder
+
+        if(convertView == null) {
+            var layout = LayoutInflater.from(context)
+            view = layout.inflate(R.layout.show_view, parent, false)
+            viewHolder = ShowViewHolder(view)
+            view.tag = viewHolder
+        } else {
+            view = convertView
+            viewHolder = view.tag as ShowViewHolder
+        }
+
+        var show = this.getItem(position) as Show
+
+        viewHolder.txtTitle.text = show.title
+        viewHolder.txtRating.text = show.rating.toString()
+
+
+        viewHolder.view.btnEdit.setOnClickListener { updateShow(show) }
+        viewHolder.view.btnDelete.setOnClickListener { deleteShow(show.id!!, position) }
 
         val animation: Animation
 
         when (ShowListActivity.animationItem) {
             R.id.fade -> {
                 animation = AnimationUtils.loadAnimation(context, R.anim.fade_in)
-                view.startAnimation(animation)
+                convertView!!.startAnimation(animation)
             }
             R.id.slideleft -> {
                 animation = AnimationUtils.loadAnimation(context, R.anim.slide_left)
-                view.startAnimation(animation)
+                convertView!!.startAnimation(animation)
             }
             R.id.slideup -> {
                 animation = AnimationUtils.loadAnimation(context, R.anim.slide_up)
-                view.startAnimation(animation)
+                convertView!!.startAnimation(animation)
             }
             R.id.shake -> {
                 animation = AnimationUtils.loadAnimation(context, R.anim.shake)
-                view.startAnimation(animation)
+                convertView!!.startAnimation(animation)
             }
             R.id.scale -> {
                 animation = AnimationUtils.loadAnimation(context, R.anim.scale)
-                view.startAnimation(animation)
+                convertView!!.startAnimation(animation)
             }
         }
-        return ShowViewHolder(view)
+
+
+        return view!!
     }
 
-    override fun onBindViewHolder(holder: ShowViewHolder, position: Int) {
-        val show = showsList[position]
-
-        Log.d("elem", show.title)
-
-        holder.view.title.text = show.title
-        holder.view.rating.text = show.rating.toString()
-
-        holder.view.btnEdit.setOnClickListener { updateShow(show) }
-        holder.view.btnDelete.setOnClickListener { deleteShow(show.id!!, position) }
+    override fun getItem(position: Int): Any {
+        return showsList[position]
     }
 
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
 
-    override fun getItemCount(): Int {
-        return showsList.size
+    override fun getCount(): Int {
+        return showsList.count()
+    }
+
+    class ShowViewHolder(val view: View) {
+        var txtTitle: TextView = view.title
+        var txtRating: TextView = view.rating
+
     }
 
     private fun updateShow(show: Show) {
@@ -93,8 +114,8 @@ class ShowRecyclerViewAdapter(
             .delete()
             .addOnCompleteListener {
                 showsList.removeAt(position)
-                notifyItemRemoved(position)
-                notifyItemRangeChanged(position, showsList.size)
+//                notifyItemRemoved(position)
+//                notifyItemRangeChanged(position, showsList.size)
                 Toast.makeText(context, "Show has been deleted!", Toast.LENGTH_SHORT).show()
             }
     }

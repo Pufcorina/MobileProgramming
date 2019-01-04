@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_show_list.*
 class ShowListActivity : AppCompatActivity() {
     private val TAG = "ShowListActivity"
 
-    private var mAdapter: ShowRecyclerViewAdapter? = null
+    private var mAdapter: ShowAdapter? = null
 
     private var firestoreDB: FirebaseFirestore? = null
     private var firestoreListener: ListenerRegistration? = null
@@ -60,7 +60,7 @@ class ShowListActivity : AppCompatActivity() {
                     showsList.add(show)
                 }
 
-                mAdapter = ShowRecyclerViewAdapter(showsList, applicationContext, firestoreDB!!)
+                mAdapter = ShowAdapter(showsList, applicationContext, firestoreDB!!)
                 show_list.adapter = mAdapter
             }
     }
@@ -84,10 +84,10 @@ class ShowListActivity : AppCompatActivity() {
                         showsList.add(show)
                     }
 
-                    mAdapter = ShowRecyclerViewAdapter(showsList, applicationContext, firestoreDB!!)
+                    mAdapter = ShowAdapter(showsList, applicationContext, firestoreDB!!)
                     val mLayoutManager = LinearLayoutManager(applicationContext)
-                    show_list.layoutManager = mLayoutManager
-                    show_list.itemAnimator = DefaultItemAnimator()
+//                    show_list.layoutManager = mLayoutManager
+//                    show_list.itemAnimator = DefaultItemAnimator()
                     show_list.adapter = mAdapter
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.exception)
