@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Market App</string>
+    <string name="title_activity_clerk">ClerkActivity</string>
+    <string name="client">Client</string>
+    <string name="clerk">Clerk</string>
+    <string name="refresh">Refresh</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+</resources>
