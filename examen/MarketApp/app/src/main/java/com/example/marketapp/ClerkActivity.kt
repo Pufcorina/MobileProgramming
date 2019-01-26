@@ -11,13 +11,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.marketapp.models.Product
 import com.example.marketapp.networking.NController
-
 import kotlinx.android.synthetic.main.activity_clerk.*
-import java.lang.Exception
 import java.util.ArrayList
 
 class ClerkActivity : AppCompatActivity() {
-    internal var elements: MutableList<Product> = ArrayList()
+    internal var elements: MutableList<Product> = ArrayList<Product>()
     private lateinit var adapter: ArrayAdapter<Product>
     private lateinit var nc: NController
 
@@ -40,31 +38,10 @@ class ClerkActivity : AppCompatActivity() {
 
         this.getProducts()
 
-        add.setOnClickListener {addElement()}
+        add_edit.setOnClickListener {getProducts()}
     }
 
-    private fun addElement() {
-        val cm = baseContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo = cm.activeNetworkInfo
-        if (networkInfo != null && networkInfo.isConnected) {
-            try {
-                val a = nc.addElement(Product("2hain444a122222", "ce2va desc21222", 10, 4))
 
-                if (a != null) {
-                    runOnUiThread {
-                        adapter.add(a)
-                        Log.d("added element", a.toString())
-                        adapter.notifyDataSetChanged()
-                    }
-                } else
-                    Toast.makeText(baseContext, "Product already exists!", Toast.LENGTH_LONG).show()
-            } catch (e: Exception) {
-                Log.d("error", e.message)
-            }
-        } else {
-            Toast.makeText(baseContext, "No Internet Connection", Toast.LENGTH_LONG).show()
-        }
-    }
 
     private fun getProducts() {
         val cm = baseContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

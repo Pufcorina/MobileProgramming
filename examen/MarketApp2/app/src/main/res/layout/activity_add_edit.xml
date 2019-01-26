@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".AddEditActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/name"
+         android:hint="@string/name"
+         android:textSize="21sp"
+         android:inputType="text"
+         android:textColorHint="@color/hint_color"/>
+    <EditText android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/quantity"
+             android:hint="@string/quantity"
+             android:textSize="21sp"
+             android:inputType="number"
+             android:textColorHint="@color/hint_color"/>
+    <EditText  android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/description"
+              android:hint="@string/description"
+              android:textSize="21sp"
+              android:inputType="textMultiLine"
+              android:textColorHint="@color/hint_color"/>
+    <EditText  android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/price"
+              android:hint="@string/price"
+              android:textSize="21sp"
+              android:inputType="number"
+              android:textColorHint="@color/hint_color"/>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_input_add"/>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@android:drawable/ic_menu_edit"/>
+
+</LinearLayout>

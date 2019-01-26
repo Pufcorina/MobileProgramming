@@ -29,12 +29,13 @@ tools:context=".ClerkActivity">
             android:choiceMode="singleChoice"
             android:drawSelectorOnTop="false"/>
 
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add"
+        android:id="@+id/add_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_add"/>
+        app:srcCompat="@android:drawable/title_bar"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
